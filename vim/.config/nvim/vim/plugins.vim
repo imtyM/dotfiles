@@ -14,7 +14,12 @@ Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 
-Plug 'vim-airline/vim-airline'
+" Status lines
+"Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
+
+" Float term
+Plug 'voldikss/vim-floaterm'
 
 " Code editing
 Plug 'junegunn/goyo.vim'
@@ -54,6 +59,7 @@ Plug 'tpope/vim-rails'
 
 " Theme
 Plug 'arcticicestudio/nord-vim'
+"Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 "goyo config

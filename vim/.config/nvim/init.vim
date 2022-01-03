@@ -6,4 +6,5 @@ source ~/.config/nvim/vim/mappings.vim
 lua << EOF
 require('imtiaz.lsp')
 require('imtiaz.treesitter')
+require('imtiaz.lualine')
 EOF

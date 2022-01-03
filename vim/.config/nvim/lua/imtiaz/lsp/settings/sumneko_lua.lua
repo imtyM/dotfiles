@@ -3,7 +3,7 @@ return {
 
 		Lua = {
 			diagnostics = {
-				globals = { "vim" },
+				globals = { "vim", "bubbles_theme" },
 			},
 			workspace = {
 				library = {
