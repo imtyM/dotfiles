@@ -47,30 +47,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'RRethy/nvim-treesitter-textsubjects'
 
-" Elixir
-"Plug 'elixir-editors/vim-elixir'
-
-" HTML
-"Plug 'digitaltoad/vim-pug'
-
 " Ruby
-"Plug 'tpope/vim-endwise'
-"Plug 'vim-ruby/vim-ruby'
-"Plug 'tpope/vim-rails'
-"Plug 'slim-template/vim-slim'
-
-" JS
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'pangloss/vim-javascript'
-"Plug 'leafgarland/typescript-vim'
-"Plug 'peitalin/vim-jsx-typescript'
-
-" Rust
-"Plug 'rust-lang/rust.vim'
-
-" Svelte
-"Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 " Theme
 Plug 'arcticicestudio/nord-vim'
