@@ -25,19 +25,7 @@ let g:nord_cursor_line_number_background = 1
 set guicursor=i:ver25-iCursor
 let g:indentLine_enabled = 0
 
-
 let g:javascript_plugin_jsdoc = 1
-
-set nocompatible
-syntax on
-filetype on
-filetype indent on
-filetype plugin on
-
-setlocal spell spelllang=en
-set nospell
-set relativenumber
-set number
 
 "Syntax highlights
 syntax keyword componentDocTag /@component/
@@ -45,5 +33,5 @@ syntax keyword componentDocTag /@component/
 "File mappings
 "
 "set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx, set filetype=typescript.tsx
-autocmd BufNewFile,BufRead *.jsx, set filetype=typescript.tsx
+"autocmd BufNewFile,BufRead *.tsx, set filetype=typescript.tsx
+"autocmd BufNewFile,BufRead *.jsx, set filetype=typescript.tsx

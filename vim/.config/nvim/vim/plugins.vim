@@ -12,12 +12,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'csexton/trailertrash.vim'
 Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
 Plug 'preservim/nerdcommenter'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
+" Status lines
+"Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
+
+" Float term
+Plug 'voldikss/vim-floaterm'
 
 " Code editing
 Plug 'junegunn/goyo.vim'
@@ -28,40 +30,37 @@ Plug 'plasticboy/vim-markdown'
 
 " Navigation
 Plug 'scrooloose/nerdtree'
+Plug 'akinsho/bufferline.nvim'
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' } " Easy motion alt?
-Plug 'pechorin/any-jump.vim'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
-" Elixir
-Plug 'elixir-editors/vim-elixir'
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'onsails/lspkind-nvim' " vscode-like pictograms for autocomplete menu
+Plug 'folke/lsp-colors.nvim'
 
-" HTML
-Plug 'digitaltoad/vim-pug'
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'RRethy/nvim-treesitter-textsubjects'
 
 " Ruby
 Plug 'tpope/vim-endwise'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-Plug 'slim-template/vim-slim'
-
-" JS
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-
-" Rust
-Plug 'rust-lang/rust.vim'
-
-" Svelte
-Plug 'leafOfTree/vim-svelte-plugin'
 
 " Theme
 Plug 'arcticicestudio/nord-vim'
+"Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 "goyo config

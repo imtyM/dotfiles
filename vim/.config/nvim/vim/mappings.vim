@@ -50,12 +50,6 @@ nnoremap <leader>y :Goyo<CR>
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-" Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 " Syntax highlighting
 function! SynStack ()
   for i1 in synstack(line("."), col("."))
@@ -66,3 +60,11 @@ function! SynStack ()
   endfor
 endfunction
 map ch :call SynStack()<CR>
+
+" EasyMotion
+let g:EasyMotion_smartcase = 1
+nmap s <Plug>(easymotion-s)
+nmap <leader>s <Plug>(AerojumpBolt)
+omap <leader>s <Plug>(AerojumpBolt)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
