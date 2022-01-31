@@ -30,6 +30,7 @@ Plug 'plasticboy/vim-markdown'
 
 " Navigation
 Plug 'scrooloose/nerdtree'
+Plug 'akinsho/bufferline.nvim'
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
