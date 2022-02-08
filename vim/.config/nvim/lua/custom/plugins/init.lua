@@ -28,5 +28,8 @@ return {
  },
  {
    "vim-ruby/vim-ruby"
+ },
+ {
+   "preservim/nerdtree"
  }
 }

@@ -13,9 +13,17 @@ map("n", "<C-w>", ":TrailerTrim | w<CR>")
 map("i", "<C-w>", "<ESC>:TrailerTrim | w<CR>")
 
 map("i", "<C-x>", "<ESC>:q<CR>")
+map("n", "<C-x>", "<ESC>:q<CR>")
 
 --Git, open in new buffer, clear the clutter
 map("n", "<leader>gg", ":enew <CR>:G<CR>:winc k<CR>:q<CR>:NvimTreeClose<CR>")
 
 --Telescope find files with <C-p>
 map("n", "<C-p>", ":Telescope find_files follow=true no_ignore=true hidden=true <CR>")
+map("n", "<C-n>", ":NERDTreeFind<CR>")
+
+--Tab control
+map("n", "<S-TAB>", ":tabp<CR>")
+map("n", "<TAB>", ":tabn<CR>")
+map("n", "tn", ":tabnew<CR>")
+

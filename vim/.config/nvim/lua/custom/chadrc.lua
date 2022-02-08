@@ -34,7 +34,7 @@ M.plugins = {
     vim_matchup = true, -- improved matchit
     cmp = true,
     snippets = false,
-    nvimtree = true,
+    nvimtree = false,
     autopairs = true,
   },
 
@@ -53,7 +53,15 @@ M.plugins = {
     },
     bufferline = {
       options = {
-        buffer_close_icon = "",
+        show_close_icon = false,
+        show_buffer_close_icons = false,
+        enforce_regular_tabs = true,
+        offsets = {
+          {
+            filetype = "nerdtree",
+            highlight = "Directory",
+          }
+        },
         custom_filter = function(buf_number)
           -- Func to filter out our managed/persistent split terms
           local present_type, type = pcall(function()
@@ -68,6 +76,10 @@ M.plugins = {
              end
           end
 
+          if vim.fn.bufwinid(buf_number) == -1 then
+            return false
+          end
+
           return true
         end,
       }
@@ -77,7 +89,6 @@ M.plugins = {
 
 M.mappings = {
    misc = {
-      close_buffer = "<C-x>",
       copy_whole_file = "<C-a>", -- copy all contents of current buffer
       copy_to_system_clipboard = "<C-c>", -- copy selected text (visual mode) or curent line (normal)
       line_number_toggle = "<leader>n", -- toggle line number
@@ -114,8 +125,8 @@ M.mappings = {
 
 M.mappings.plugins = {
    bufferline = {
-      next_buffer = "<C-o>",
-      prev_buffer = "<C-i>",
+      next_buffer = "",
+      prev_buffer = "",
    },
    comment = {
       toggle = "<leader>/",
