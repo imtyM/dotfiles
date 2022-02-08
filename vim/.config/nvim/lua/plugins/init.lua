@@ -8,7 +8,7 @@ end
 local override_req = require("core.utils").override_req
 
 local plugins = {
-   { "Nvchad/extensions" },
+   { "NvChad/extensions" },
    { "nvim-lua/plenary.nvim" },
    { "lewis6991/impatient.nvim" },
    { "nathom/filetype.nvim" },
@@ -57,7 +57,7 @@ local plugins = {
    },
 
    {
-      "norcalli/nvim-colorizer.lua",
+      "NvChad/nvim-colorizer.lua",
       disable = not plugin_settings.status.colorizer,
       event = "BufRead",
       config = override_req("nvim_colorizer", "plugins.configs.others", "colorizer"),
@@ -197,6 +197,7 @@ local plugins = {
       "numToStr/Comment.nvim",
       disable = not plugin_settings.status.comment,
       module = "Comment",
+      keys = { "gcc" },
       config = override_req("nvim_comment", "plugins.configs.others", "comment"),
       setup = function()
          require("core.mappings").comment()
