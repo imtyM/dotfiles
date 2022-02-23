@@ -26,4 +26,18 @@ map("n", "<C-n>", ":NERDTreeFind<CR>")
 map("n", "<S-TAB>", ":tabp<CR>")
 map("n", "<TAB>", ":tabn<CR>")
 map("n", "tn", ":tabnew<CR>")
+vim.cmd [[
+nmap <C-o> :tabn<CR>
+nmap <C-i> :tabp<CR>
+noremap <C-o> :tabn<CR>
+noremap <C-i> :tabp<CR>
+nnoremap <C-o> :tabn<CR>
+nnoremap <C-i> :tabp<CR>
+]]
+
+--Easymotion
+vim.cmd [[
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+]]
 

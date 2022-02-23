@@ -31,5 +31,14 @@ return {
  },
  {
    "preservim/nerdtree"
+ },
+ {
+   "Pocco81/TrueZen.nvim"
+ },
+ {
+   "chrisbra/csv.vim"
+ },
+ {
+   'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
  }
 }
