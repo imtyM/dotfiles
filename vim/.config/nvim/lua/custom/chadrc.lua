@@ -43,6 +43,11 @@ M.plugins = {
   },
 
   default_plugin_config_replace = {
+    telescope = {
+      defaults = {
+        file_sorter = require("telescope.sorters").get_fzy_sorter
+      }
+    },
     nvim_tree = {
       view = {
         auto_resize = false,
