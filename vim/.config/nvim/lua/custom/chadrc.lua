@@ -43,6 +43,20 @@ M.plugins = {
   },
 
   default_plugin_config_replace = {
+    cmp = {
+     sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer",
+          options = {
+            get_bufnrs = function()
+              return vim.api.nvim_list_bufs()
+            end}
+          },
+        { name = "nvim_lua" },
+        { name = "path" },
+      },
+    },
     telescope = {
       defaults = {
         file_sorter = require("telescope.sorters").get_fzy_sorter

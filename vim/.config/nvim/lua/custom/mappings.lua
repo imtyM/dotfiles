@@ -16,11 +16,14 @@ map("i", "<C-x>", "<ESC>:q<CR>")
 map("n", "<C-x>", "<ESC>:q<CR>")
 
 --Git, open in new buffer, clear the clutter
-map("n", "<leader>gg", ":enew <CR>:G<CR>:winc k<CR>:q<CR>:NvimTreeClose<CR>")
+map("n", "<leader>gg", ":tabnew <CR>:G<CR>:winc k<CR>:q<CR>:NvimTreeClose<CR>")
 
 --Telescope find files with <C-p>
 map("n", "<C-p>", ":Telescope find_files follow=true no_ignore=true hidden=true <CR>")
 map("n", "<C-n>", ":NERDTreeFind<CR>")
+
+--Zen mode
+map("n", "<leader>z", ":TZAtaraxis<CR>")
 
 --Tab control
 map("n", "<S-TAB>", ":tabp<CR>")
@@ -40,4 +43,3 @@ vim.cmd [[
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 ]]
-

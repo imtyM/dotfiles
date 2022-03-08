@@ -40,5 +40,8 @@ return {
  },
  {
    'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
+ },
+ {
+   'slim-template/vim-slim'
  }
 }
