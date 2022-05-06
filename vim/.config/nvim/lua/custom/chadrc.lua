@@ -30,7 +30,7 @@ M.plugins = {
     bufferline = true, -- manage and preview opened buffers
     colorizer = false, -- color RGB, HEX, CSS, NAME color codes
     comment = true, -- easily (un)comment code, language aware
-    dashboard = true,
+    alpha = true,
     better_escape = true, -- map to <ESC> with no lag
     feline = true, -- statusline
     gitsigns = true,
@@ -55,7 +55,7 @@ M.plugins = {
           },
         { name = "nvim_lua" },
         { name = "path" },
-      },
+      }
     },
     telescope = {
       defaults = {
