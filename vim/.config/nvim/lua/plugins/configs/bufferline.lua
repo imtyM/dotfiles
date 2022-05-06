@@ -1,12 +1,10 @@
 local present, bufferline = pcall(require, "bufferline")
+
 if not present then
    return
 end
 
-local default = {
-   colors = require("colors").get(),
-}
-default = {
+local options = {
    options = {
       offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
       buffer_close_icon = "",
@@ -25,6 +23,7 @@ default = {
       separator_style = "thin",
       always_show_bufferline = true,
       diagnostics = false,
+      themable = true,
       custom_filter = function(buf_number)
          -- Func to filter out our managed/persistent split terms
          local present_type, type = pcall(function()
@@ -43,106 +42,9 @@ default = {
          return true
       end,
    },
-
-   highlights = {
-      background = {
-         guifg = default.colors.grey_fg,
-         guibg = default.colors.black2,
-      },
-
-      -- buffers
-      buffer_selected = {
-         guifg = default.colors.white,
-         guibg = default.colors.black,
-         gui = "bold",
-      },
-      buffer_visible = {
-         guifg = default.colors.light_grey,
-         guibg = default.colors.black2,
-      },
-
-      -- for diagnostics = "nvim_lsp"
-      error = {
-         guifg = default.colors.light_grey,
-         guibg = default.colors.black2,
-      },
-      error_diagnostic = {
-         guifg = default.colors.light_grey,
-         guibg = default.colors.black2,
-      },
-
-      -- close buttons
-      close_button = {
-         guifg = default.colors.light_grey,
-         guibg = default.colors.black2,
-      },
-      close_button_visible = {
-         guifg = default.colors.light_grey,
-         guibg = default.colors.black2,
-      },
-      close_button_selected = {
-         guifg = default.colors.red,
-         guibg = default.colors.black,
-      },
-      fill = {
-         guifg = default.colors.grey_fg,
-         guibg = default.colors.black2,
-      },
-      indicator_selected = {
-         guifg = default.colors.black,
-         guibg = default.colors.black,
-      },
-
-      -- modified
-      modified = {
-         guifg = default.colors.red,
-         guibg = default.colors.black2,
-      },
-      modified_visible = {
-         guifg = default.colors.red,
-         guibg = default.colors.black2,
-      },
-      modified_selected = {
-         guifg = default.colors.green,
-         guibg = default.colors.black,
-      },
-
-      -- separators
-      separator = {
-         guifg = default.colors.black2,
-         guibg = default.colors.black2,
-      },
-      separator_visible = {
-         guifg = default.colors.black2,
-         guibg = default.colors.black2,
-      },
-      separator_selected = {
-         guifg = default.colors.black2,
-         guibg = default.colors.black2,
-      },
-
-      -- tabs
-      tab = {
-         guifg = default.colors.light_grey,
-         guibg = default.colors.one_bg3,
-      },
-      tab_selected = {
-         guifg = default.colors.black2,
-         guibg = default.colors.nord_blue,
-      },
-      tab_close = {
-         guifg = default.colors.red,
-         guibg = default.colors.black,
-      },
-   },
 }
 
-local M = {}
-M.setup = function(override_flag)
-   if override_flag then
-      default = require("core.utils").tbl_override_req("bufferline", default)
-   end
-   bufferline.setup(default)
-end
+-- check for any override
+options = require("core.utils").load_override(options, "akinsho/bufferline.nvim")
 
-return M
+bufferline.setup(options)
