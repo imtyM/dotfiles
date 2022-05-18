@@ -8,8 +8,8 @@ map("i", "<C-j>", "<ESC>")
 
 -- Quiting
 map("n", "<leader>q", ":q <CR>")
-map("n", "<C-q>", ":TrailerTrim | wa | lua require('core.utils').close_buffer() <CR>")
-map("i", "<C-q>", "<ESC>:TrailerTrim | wa | lua require('core.utils').close_buffer() <CR>")
+map("n", "<C-q>", ":TrailerTrim | wa | :q <CR>")
+map("i", "<C-q>", "<ESC>:TrailerTrim | wa | :q <CR>")
 map("i", "<C-x>", "<ESC>:q<CR>")
 map("n", "<C-x>", "<ESC>:q<CR>")
 

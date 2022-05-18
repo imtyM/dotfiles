@@ -98,7 +98,6 @@ local M = {}
 -- below are all plugin related mappings
 
 M.bufferline = function()
-   print('bufferline')
    map("n", "<TAB>", "<cmd> :BufferLineCycleNext <CR>")
    map("n", "<S-Tab>", "<cmd> :BufferLineCyclePrev <CR>")
 end

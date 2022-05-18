@@ -25,5 +25,14 @@ return {
      require "plugins.configs.telescope"
      require("telescope").load_extension('fzf')
    end
+  },
+  ["neovim/nvim-lspconfig"] = {
+    setup = function()
+      require("core.utils").packer_lazy_load "nvim-lsp-installer"
+      -- reload the current file so lsp actually starts for it
+      vim.defer_fn(function()
+         vim.cmd 'if &ft == "packer" | echo "" | else | silent! e %'
+      end, 0)
+    end,
   }
 }
