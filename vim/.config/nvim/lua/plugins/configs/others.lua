@@ -1,5 +1,7 @@
 local M = {}
 
+local load_override = require("core.utils").load_override
+
 M.autopairs = function()
    local present1, autopairs = pcall(require, "nvim-autopairs")
    local present2, cmp = pcall(require, "cmp")
@@ -8,10 +10,13 @@ M.autopairs = function()
       return
    end
 
-   autopairs.setup {
+   local options = {
       fast_wrap = {},
       disable_filetype = { "TelescopePrompt", "vim" },
    }
+
+   options = load_override(options, "windwp/nvim-autopairs")
+   autopairs.setup(options)
 
    local cmp_autopairs = require "nvim-autopairs.completion.cmp"
 
@@ -32,7 +37,7 @@ M.better_escape = function()
       keys = "<Esc>",
    }
 
-   options = require("core.utils").load_override(options, "max397574/better-escape.nvim")
+   options = load_override(options, "max397574/better-escape.nvim")
    escape.setup(options)
 end
 
@@ -63,7 +68,7 @@ M.blankline = function()
       show_first_indent_level = false,
    }
 
-   options = require("core.utils").load_override(options, "lukas-reineke/indent-blankline.nvim")
+   options = load_override(options, "lukas-reineke/indent-blankline.nvim")
    blankline.setup(options)
 end
 
@@ -93,7 +98,7 @@ M.colorizer = function()
       },
    }
 
-   options = require("core.utils").load_override(options, "NvChad/nvim-colorizer.lua")
+   options = load_override(options, "NvChad/nvim-colorizer.lua")
 
    colorizer.setup(options["filetypes"], options["user_default_options"])
    vim.cmd "ColorizerReloadAllBuffers"
@@ -106,7 +111,9 @@ M.comment = function()
       return
    end
 
-   nvim_comment.setup()
+   local options = {}
+   options = load_override(options, "numToStr/Comment.nvim")
+   nvim_comment.setup(options)
 end
 
 M.luasnip = function()
@@ -116,10 +123,13 @@ M.luasnip = function()
       return
    end
 
-   luasnip.config.set_config {
+   local options = {
       history = true,
       updateevents = "TextChanged,TextChangedI",
    }
+
+   options = load_override(options, "L3MON4D3/LuaSnip")
+   luasnip.config.set_config(options)
 
    require("luasnip.loaders.from_vscode").lazy_load()
 end
@@ -149,7 +159,7 @@ M.signature = function()
       padding = "", -- character to pad on left and right of signature can be ' ', or '|'  etc
    }
 
-   options = require("core.utils").load_override(options, "ray-x/lsp_signature.nvim")
+   options = load_override(options, "ray-x/lsp_signature.nvim")
    lsp_signature.setup(options)
 end
 
@@ -200,7 +210,7 @@ M.gitsigns = function()
       return
    end
 
-   gitsigns.setup {
+   local options = {
       signs = {
          add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr" },
          change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr" },
@@ -209,6 +219,9 @@ M.gitsigns = function()
          changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
       },
    }
+   options = load_override(options, "lewis6991/gitsigns.nvim")
+
+   gitsigns.setup(options)
 end
 
 return M

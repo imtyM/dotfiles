@@ -12,17 +12,8 @@ return {
   ["chrisbra/csv.vim"] = {},
   ["nvim-telescope/telescope-fzf-native.nvim"] = {run = 'make'},
   ["slim-template/vim-slim"] = {},
-  ["Pocco81/TrueZen.nvim"] = {
-    config = function()
-      require("custom.plugins.configs").trueZen()
-    end
-  },
-  ["rmagatti/goto-preview"] = {
-    config = function ()
-      require('goto-preview').setup { default_mappings = true }
-    end
-  },
-  ["EdenEast/nightfox.nvim"] = {},
+  ["Pocco81/TrueZen.nvim"] = {},
+
 
   -- Core
   ["akinsho/bufferline.nvim"] = {
@@ -35,5 +26,20 @@ return {
      require "plugins.configs.telescope"
      require("telescope").load_extension('fzf')
    end
-  }
+  },
+  -- ["neovim/nvim-lspconfig"] = {
+  --   after = "nvim-lsp-installer",
+  --   module = "lspconfig",
+  --   config = function()
+  --      require "plugins.configs.lsp_installer"
+  --      require "plugins.configs.lspconfig"
+  --   end,
+  --   setup = function()
+  --     require("core.utils").packer_lazy_load "nvim-lsp-installer"
+  --     -- reload the current file so lsp actually starts for it
+  --     vim.defer_fn(function()
+  --        vim.cmd 'if &ft == "packer" | echo "" | else | silent! e %'
+  --     end, 0)
+  --   end
+  -- }
 }

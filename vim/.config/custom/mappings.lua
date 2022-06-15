@@ -38,10 +38,7 @@ M.misc = {
     ["<C-o>"] = {":tabn<CR>", "Next tab"},
     ["<TAB>"] = {":tabn<CR>", "Next tab"},
     ["tn"] = {":tabnew<CR>", "New tab"},
-    ["<C-p>"] = {":Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Search project files"},
-    ["ta"] = { "<cmd> TZAtaraxis <CR>", "   truzen ataraxis" },
-    ["tm"] = { "<cmd> TZMinimalist <CR>", "   truzen minimal" },
-    ["tf"] = { "<cmd> TZFocus <CR>", "   truzen focus" },
+    ["<C-p>"] = {":Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Search project files"}
   },
 
   i = {
