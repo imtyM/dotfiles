@@ -24,12 +24,7 @@ return {
   },
   ["EdenEast/nightfox.nvim"] = {},
 
-  -- Core
-  ["akinsho/bufferline.nvim"] = {
-    setup = function()
-    end
-  },
-
+  -- Core replacements
   ["nvim-telescope/telescope.nvim"] = {
    config = function ()
      require "plugins.configs.telescope"

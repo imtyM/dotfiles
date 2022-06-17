@@ -14,8 +14,6 @@ M.plugins = {
   override = {
    ["akinsho/bufferline.nvim"] = pluginConfs.bufferline,
    ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
-   ["nvim-telescope/telescope.nvim"] = pluginConfs.telescope,
-   ["kyazdani42/nvim-tree.lua"] = pluginConfs.nvim_tree,
   },
 
   remove = {
