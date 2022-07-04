@@ -10,7 +10,7 @@ export APPS_HOME=/home/imtiaz/apps
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # export PATH="$PATH:$JAVA_HOME/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$APPS_HOME"
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
 TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'avg shared (code):         %X KB'$'\n'\

@@ -49,8 +49,8 @@ M.misc = {
     ["<C-j>"] = {"<ESC>", "Escape"},
 
     -- Writing and closing
-    ["<C-q>"] = {":TrailerTrim | wa | :q <CR>", "Save a close buffer"},
-    ["<C-w>"] = {":TrailerTrim | wa<CR>", "Write all buffers"},
+    ["<C-q>"] = {"<ESC>:TrailerTrim | wa | :q <CR>", "Save a close buffer"},
+    ["<C-w>"] = {"<ESC>:TrailerTrim | wa <CR>", "Write all buffers"},
     ["<C-x>"] = {"<ESC>:q<CR>", "Close buffer"}
   }
 }
