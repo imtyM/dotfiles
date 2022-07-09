@@ -13,7 +13,8 @@ M.disable = {
     ["<S-Tab>"] = "",
 
     -- close buffer + hide terminal buffer
-    ["<leader>x"] = ""
+    ["<leader>x"] = "",
+    ["<leader>rn"] = ""
   },
 
   i = {
@@ -24,7 +25,8 @@ M.disable = {
 M.misc = {
   n = {
     -- NERDTree
-    ["<C-n>"] = {":NERDTreeFind<CR>", "Toggle nerd tree"},
+    -- ["<C-n>"] = {":NERDTreeFind<CR>", "Toggle nerd tree"},
+    ["<C-n>"] = {":RnvimrToggle<CR>", "Toggle ranger"},
 
     -- Writing and closing
     ["<C-q>"] = {":TrailerTrim | wa | :q <CR>", "Write and close buffer"},
@@ -42,6 +44,9 @@ M.misc = {
     ["ta"] = { "<cmd> TZAtaraxis <CR>", "   truzen ataraxis" },
     ["tm"] = { "<cmd> TZMinimalist <CR>", "   truzen minimal" },
     ["tf"] = { "<cmd> TZFocus <CR>", "   truzen focus" },
+
+    -- Renamer
+    ["<leader>rn"] = {"<cmd> lua require('renamer').rename()<CR>", "Rename"}
   },
 
   i = {

@@ -8,7 +8,6 @@ return {
   ["tpope/vim-rails"] = {},
   ["tpope/vim-endwise"] = {},
   ["vim-ruby/vim-ruby"] = {},
-  ["preservim/nerdtree"] = {},
   ["chrisbra/csv.vim"] = {},
   ["nvim-telescope/telescope-fzf-native.nvim"] = {run = 'make'},
   ["slim-template/vim-slim"] = {},
@@ -23,6 +22,26 @@ return {
     end
   },
   ["EdenEast/nightfox.nvim"] = {},
+  ["filipdutescu/renamer.nvim"] = {
+    config = function ()
+      require('renamer').setup()
+    end,
+    branch = 'master',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  },
+  ['beauwilliams/focus.nvim'] = {
+    config = function()
+        require("focus").setup({hybridnumber = true})
+    end
+  },
+
+  -- Filetree
+  ["kevinhwang91/rnvimr"] = {
+    config = function()
+      require("custom.plugins.configs").ranger()
+    end
+  },
+  -- ["preservim/nerdtree"] = {},
 
   -- Core replacements
   ["nvim-telescope/telescope.nvim"] = {

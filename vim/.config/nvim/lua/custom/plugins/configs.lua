@@ -36,12 +36,22 @@ M.bufferline = {
   }
 }
 
-M.nvim_tree = {
-  view = {
-    auto_resize = false,
-    allow_resize = false
-  }
-}
+M.ranger = function ()
+  vim.g.rnvimr_enable_picker = 1
+  vim.g.rnvimr_draw_border = 0
+  vim.g.rnvimr_hide_gitignore = 1
+  vim.g.rnvimr_enable_bw = 1
+
+  vim.cmd [[
+    let g:rnvimr_action = {
+              \ '<C-t>': 'NvimEdit tabedit',
+              \ '<C-s>': 'NvimEdit split',
+              \ '<C-v>': 'NvimEdit vsplit',
+              \ 'gw': 'JumpNvimCwd',
+              \ 'yw': 'EmitRangerCwd'
+              \ }
+  ]]
+end
 
 M.cmp = function ()
   local present, cmp = pcall(require, "cmp")
