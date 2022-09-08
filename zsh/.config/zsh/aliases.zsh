@@ -9,15 +9,9 @@ alias sz='source ~/.zshrc'
 
 alias gdpl='git pull && git pull origin develop'
 
-#wealthbit aliases
-alias ws='bin/webpack-dev-server'
+#work aliases
 alias be='bundle exec'
 alias rs='bundle exec rails s'
 alias rt='bundle exec rails t'
 alias rc='bundle exec rails c'
-
-# useful commands
-alias check_space='sudo ncdu -x / --exclude /System/Volumes/Data --exclude /Volumes'
-
-#cd aliases
-alias cdus='cd ~/Library/Application\ Support/Übersicht/widgets/'
+alias run='bin/run'

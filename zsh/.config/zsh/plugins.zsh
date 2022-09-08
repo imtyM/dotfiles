@@ -3,6 +3,8 @@ source ~/.config/zsh/antigen.zsh
 antigen use oh-my-zsh
 
 plugins=(git reminder osx vi-mode)
+
+antigen bundle marlonrichert/zsh-autocomplete@main
 antigen bundle git
 antigen bundle AlexisBRENON/oh-my-zsh-reminder
 antigen bundle osx
@@ -13,7 +15,6 @@ antigen bundle djui/alias-tips
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle supercrabtree/k
-
 
 antigen theme TyWR/Nord-zsh
 

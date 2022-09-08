@@ -11,6 +11,13 @@ export APPS_HOME=/home/imtiaz/apps
 # export PATH="$PATH:$JAVA_HOME/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$APPS_HOME"
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
+# init zoxide if available
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh)"
+else
+  echo '[oh-my-zsh] zoxide not found, please install it from https://github.com/ajeetdsouza/zoxide'
+fi
+
 TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'avg shared (code):         %X KB'$'\n'\
 'avg unshared (data/stack): %D KB'$'\n'\

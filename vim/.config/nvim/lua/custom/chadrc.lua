@@ -12,19 +12,9 @@ M.plugins = {
   user = userPlugins,
 
   override = {
-   ["akinsho/bufferline.nvim"] = pluginConfs.bufferline,
    ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
-  },
-
-  remove = {
-    "kyazdani42/nvim-tree.lua"
-  },
-
-  options = {
-    lspconfig = {
-      setup_lspconf = "custom.lsp.lspconfig"
-    }
-  },
+   ["nvim-telescope/telescope.nvim"] = pluginConfs.telescope
+  }
 }
 
 M.mappings = require("custom.mappings")

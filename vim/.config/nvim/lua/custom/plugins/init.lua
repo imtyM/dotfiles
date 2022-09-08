@@ -34,20 +34,35 @@ return {
         require("focus").setup({hybridnumber = true})
     end
   },
-
-  -- Filetree
-  ["kevinhwang91/rnvimr"] = {
-    config = function()
-      require("custom.plugins.configs").ranger()
+  ['mileszs/ack.vim'] = {
+    config = function ()
+      vim.cmd [[
+        if executable('ag')
+          let g:ackprg = 'ag --vimgrep'
+        endif
+      ]]
     end
   },
-  -- ["preservim/nerdtree"] = {},
+
+  -- Filetree
+  ["preservim/nerdtree"] = {},
+  ["nvim-telescope/telescope-file-browser.nvim"] = {},
 
   -- Core replacements
   ["nvim-telescope/telescope.nvim"] = {
-   config = function ()
-     require "plugins.configs.telescope"
-     require("telescope").load_extension('fzf')
-   end
+    config = function ()
+      require "plugins.configs.telescope"
+      require("telescope").load_extension('fzf')
+      require("telescope").load_extension('file_browser')
+    end
+  },
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.lsp.lspconfig"
+    end,
+  },
+  ["folke/which-key.nvim"] = {
+    disable = false
   }
 }
