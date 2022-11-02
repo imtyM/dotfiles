@@ -11,11 +11,11 @@ return {
   ["chrisbra/csv.vim"] = {},
   ["nvim-telescope/telescope-fzf-native.nvim"] = {run = 'make'},
   ["slim-template/vim-slim"] = {},
-  ["Pocco81/TrueZen.nvim"] = {
-    config = function()
-      require("custom.plugins.configs").trueZen()
-    end
-  },
+  -- ["Pocco81/TrueZen.nvim"] = {
+  --   config = function()
+  --     require("custom.plugins.configs").trueZen()
+  --   end
+  -- },
   ["rmagatti/goto-preview"] = {
     config = function ()
       require('goto-preview').setup { default_mappings = true }
@@ -45,7 +45,7 @@ return {
   },
 
   -- Filetree
-  ["preservim/nerdtree"] = {},
+  -- ["preservim/nerdtree"] = {},
   ["nvim-telescope/telescope-file-browser.nvim"] = {},
 
   -- Core replacements

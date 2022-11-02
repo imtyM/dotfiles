@@ -149,4 +149,16 @@ M.telescope = function ()
   return M
 end
 
+M.mason = function ()
+  local M = {
+    ensure_installed = {
+      "svelte-language-server",
+      "tailwindcss-language-server",
+      "typescript-language-server"
+
+    }
+  }
+  return M
+end
+
 return M

@@ -35,13 +35,13 @@ M.misc = {
         vim.cmd("q")
       end,
       "Write and close buffer"},
-      ["<C-w>"] = {":TrailerTrim | wa<CR>", "Write all buffers"},
-      ["<C-x>"] = {
-        function()
-          require("core.utils").close_buffer()
-          vim.cmd("q")
-        end,
-        "   close buffer"},
+    ["<C-w>"] = {":TrailerTrim | wa<CR>", "Write all buffers"},
+    ["<C-x>"] = {
+      function()
+        require("core.utils").close_buffer()
+        vim.cmd("q")
+      end,
+      "   close buffer"},
     ["<leader>gg"] = { ":tabnew <CR>:G<CR>:winc k<CR>:q<CR>:NvimTreeClose<CR>", "Git buffer in new window"},
 
     -- Tab control
