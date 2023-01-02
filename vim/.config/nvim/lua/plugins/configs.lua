@@ -12,7 +12,9 @@ require('lualine').setup {
 require('Comment').setup()
 
 -- Enable nvim-tree
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  remove_keymaps = {'<C-e>'}
+})
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
@@ -206,6 +208,10 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -228,6 +234,9 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
   },
 }
 

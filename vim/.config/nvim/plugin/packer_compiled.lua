@@ -94,10 +94,21 @@ _G.packer_plugins = {
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["csv.vim"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/csv.vim",
+    url = "https://github.com/chrisbra/csv.vim"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["focus.nvim"] = {
+    config = { "\27LJ\2\nH\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\17hybridnumber\2\nsetup\nfocus\frequire\0" },
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/focus.nvim",
+    url = "https://github.com/beauwilliams/focus.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -161,11 +172,6 @@ _G.packer_plugins = {
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -189,24 +195,93 @@ _G.packer_plugins = {
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["trailertrash.vim"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/trailertrash.vim",
+    url = "https://github.com/csexton/trailertrash.vim"
+  },
+  ["true-zen.nvim"] = {
+    config = { "\27LJ\2\n[\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17integrations\1\0\0\1\0\1\ttmux\2\nsetup\rtrue-zen\frequire\0" },
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/true-zen.nvim",
+    url = "https://github.com/Pocco81/true-zen.nvim"
+  },
+  ["vim-easymotion"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-easymotion",
+    url = "https://github.com/easymotion/vim-easymotion"
+  },
+  ["vim-endwise"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-endwise",
+    url = "https://github.com/tpope/vim-endwise"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-rails"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-rails",
+    url = "https://github.com/tpope/vim-rails"
   },
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
   },
+  ["vim-ruby"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-ruby",
+    url = "https://github.com/vim-ruby/vim-ruby"
+  },
   ["vim-sleuth"] = {
     loaded = true,
     path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
+  },
+  ["vim-slim"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-slim",
+    url = "https://github.com/slim-template/vim-slim"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0" },
+    loaded = true,
+    path = "/home/imtiaz/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: true-zen.nvim
+time([[Config for true-zen.nvim]], true)
+try_loadstring("\27LJ\2\n[\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17integrations\1\0\0\1\0\1\ttmux\2\nsetup\rtrue-zen\frequire\0", "config", "true-zen.nvim")
+time([[Config for true-zen.nvim]], false)
+-- Config for: focus.nvim
+time([[Config for focus.nvim]], true)
+try_loadstring("\27LJ\2\nH\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\17hybridnumber\2\nsetup\nfocus\frequire\0", "config", "focus.nvim")
+time([[Config for focus.nvim]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
