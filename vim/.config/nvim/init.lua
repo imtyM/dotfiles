@@ -1,6 +1,6 @@
 local utils = require('utils')
 
-local is_bootstrap = utils.bootstrap_packer()
+local is_bootstrap = utils.bootstrap_lazy()
 require('plugins').load(is_bootstrap)
 
 -- When we are bootstrapping a configuration, it doesn't
