@@ -1,9 +1,6 @@
-local M = {}
-
-M.load = function(is_bootstrap)
-	require('lazy').setup({
+return {
 		-- UI
-		 {
+		{
 			'beauwilliams/focus.nvim',
 			lazy = true,
 			config = function()
@@ -12,18 +9,18 @@ M.load = function(is_bootstrap)
 		},
 
 		-- Language packages
-		 'tpope/vim-surround',
-		 'csexton/trailertrash.vim',
-		 'easymotion/vim-easymotion',
-		 'christoomey/vim-tmux-navigator',
-		 'tpope/vim-rails',
-		 'tpope/vim-endwise',
-		 'vim-ruby/vim-ruby',
-		 'chrisbra/csv.vim',
+		'tpope/vim-surround',
+		'csexton/trailertrash.vim',
+		'easymotion/vim-easymotion',
+		'christoomey/vim-tmux-navigator',
+		'tpope/vim-rails',
+		'tpope/vim-endwise',
+		'vim-ruby/vim-ruby',
+		'chrisbra/csv.vim',
 
-		 "slim-template/vim-slim",
+		"slim-template/vim-slim",
 
-		 {
+		{
 			"Pocco81/true-zen.nvim",
 			config = function()
 				require("true-zen").setup {
@@ -107,8 +104,8 @@ M.load = function(is_bootstrap)
 		{
 			"EdenEast/nightfox.nvim",
 			lazy = false,
-			priority=1000,
-			config = function ()
+			priority = 1000,
+			config = function()
 				vim.cmd [[
 					colorscheme nordfox
 				]]
@@ -118,10 +115,4 @@ M.load = function(is_bootstrap)
 			'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
 		}
 
-	})
-	if is_bootstrap then
-		require('lazy').sync()
-	end
-end
-
-return M
+	}

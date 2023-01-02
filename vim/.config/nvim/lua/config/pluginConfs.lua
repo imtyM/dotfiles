@@ -13,7 +13,7 @@ require('Comment').setup()
 
 -- Enable nvim-tree
 require("nvim-tree").setup({
-  remove_keymaps = {'<C-e>'}
+  remove_keymaps = { '<C-e>' }
 })
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
@@ -141,7 +141,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = {'rust_analyzer', 'tsserver', 'sumneko_lua'}
+local servers = { 'rust_analyzer', 'tsserver', 'sumneko_lua' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {

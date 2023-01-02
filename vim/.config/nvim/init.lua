@@ -1,23 +1,22 @@
-local utils = require('utils')
-
-local is_bootstrap = utils.bootstrap_lazy()
-require('plugins').load(is_bootstrap)
+local plugins = require('config.plugins')
+local is_bootstraping = plugins.bootstrap()
+plugins.init()
 
 -- When we are bootstrapping a configuration, it doesn't
 -- make sense to execute the rest of the init.lua.
 --
 -- You'll need to restart nvim, and then it will work.
-if is_bootstrap then
+if is_bootstraping then
   print '=================================='
   print '    Plugins are being installed'
-  print '    Wait until Packer completes,'
+  print '    Wait until instalation completes,'
   print '       then restart nvim'
   print '=================================='
   return
 end
 
-require('base_options')
-require('plugins.configs')
+require('config.options')
+require('config.pluginConfs')
 
-require('autocmds')
-require('keymaps')
+require('config.autocmds')
+require('config.keymaps')
