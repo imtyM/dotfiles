@@ -21,14 +21,12 @@ RUN git clone https://github.com/neovim/neovim.git
 ARG VERSION=master
 RUN cd neovim && git checkout ${VERSION} && make CMAKE_BUILD_TYPE=RelWithDebInfo install
 
-# To support kickstart.nvim
 RUN apk --no-cache add \
     fd  \
     ctags \
     ripgrep \
     git
 
-# Copy the kickstart.nvim init.lua
 COPY ./init.lua /root/.config/nvim/init.lua
 
 WORKDIR /neovim

@@ -16,7 +16,5 @@ if is_bootstraping then
 end
 
 require('config.options')
-require('config.pluginConfs')
-
 require('config.autocmds')
 require('config.keymaps')
