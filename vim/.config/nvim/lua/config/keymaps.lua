@@ -1,3 +1,5 @@
+local keymap = vim.keymap.set
+
 local nmap = function(keys, func, desc)
   if desc then
     desc = 'LSP: ' .. desc
@@ -63,11 +65,44 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
--- LSP keymaps
-nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+--Easymotion
+vim.cmd [[
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+]]
 
-nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+-- Git
+
+nmap('<leader>gg', ':tabnew <CR>:G<CR>:winc k<CR>:q<CR>:NvimTreeClose<CR>', '[G]it')
+
+------------------------ LSP keymaps -------------------------
+-- Finder
+keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+
+-- Code action
+-- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true, desc = '[C]ode [A]ction' })
+
+-- rename
+-- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true, desc = '[R]e[n]ame'})
+
+-- nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+-- Peek Definition
+-- you can edit the definition file in this flaotwindow
+-- also support open/vsplit/etc operation check definition_action_keys
+-- support tagstack C-t jump back
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true, desc = '[P]eek definition' })
+
+-- Show line diagnostics
+keymap("n", "<leader>gq", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true, desc  = 'Show line diagnostics' })
+
+-- Show cursor diagnostics
+keymap("n", "<leader>gq", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true, desc = 'Show cursor diagnostics' })
+
+-- Outline
+keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true, desc = 'Lsp [O]utline' })
+
 nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
 nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
@@ -75,7 +110,9 @@ nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocumen
 nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
 -- See `:help K` for why this keymap
-nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+-- nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+-- Hover Doc
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true, desc = 'Hover doc' })
 nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
 -- Lesser used LSP functionality
@@ -86,12 +123,4 @@ nmap('<leader>wl', function()
   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, '[W]orkspace [L]ist Folders')
 
---Easymotion
-vim.cmd [[
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-]]
-
--- Git
-
-nmap('<leader>gg', ':tabnew <CR>:G<CR>:winc k<CR>:q<CR>:NvimTreeClose<CR>', '[G]it')
+------------------------ LSP keymaps -------------------------

@@ -1,6 +1,12 @@
 local opt = vim.opt
 local g = vim.g
 
+if vim.fn.has("nvim-0.8") == 1 then
+  vim.opt.backup = true
+  vim.opt.cmdheight = 0
+  vim.opt.backupdir = vim.fn.stdpath("state") .. "/backup"
+end
+
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
