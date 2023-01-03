@@ -32,7 +32,25 @@ return {
 							fallback()
 						end
 					end, { 'i', 's' }),
+					['<C-l>'] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_next_item()
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
+						else
+							fallback()
+						end
+					end, { 'i', 's' }),
 					['<S-Tab>'] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						elseif luasnip.jumpable(-1) then
+							luasnip.jump(-1)
+						else
+							fallback()
+						end
+					end, { 'i', 's' }),
+					['<C-h>'] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
 						elseif luasnip.jumpable(-1) then
@@ -45,12 +63,38 @@ return {
 				sources = {
 					{ name = 'nvim_lsp' },
 					{ name = 'luasnip' },
-					{ name = "buffer" },
+					{
+						name = 'buffer',
+						option = {
+							keyword_length = 2,
+							get_bufnrs = function()
+								return vim.api.nvim_list_bufs()
+							end
+						}
+					},
+					{
+						name = 'fuzzy_buffer',
+						option = {
+							get_bufnrs = function()
+								local bufs = {}
+								for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+									local buftype = vim.api.nvim_buf_get_option(buf, 'buftype')
+									if buftype ~= 'nofile' and buftype ~= 'prompt' then
+										bufs[#bufs + 1] = buf
+									end
+								end
+								return bufs
+							end
+						},
+					},
 					{ name = "nvim_lua" },
 					{ name = "path" },
+					{ name = "conventionalcommits" },
+					{ name = "calc" },
 				},
 			}
 		end,
-		dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+		dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'tzachar/cmp-fuzzy-buffer',
+			'tzachar/fuzzy.nvim' },
 	},
 }
