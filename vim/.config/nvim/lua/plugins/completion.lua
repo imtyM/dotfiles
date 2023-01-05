@@ -1,3 +1,16 @@
+local function border(hl_name)
+	return {
+		{ "╭", hl_name },
+		{ "─", hl_name },
+		{ "╮", hl_name },
+		{ "│", hl_name },
+		{ "╯", hl_name },
+		{ "─", hl_name },
+		{ "╰", hl_name },
+		{ "│", hl_name },
+	}
+end
+
 return {
 	{ -- Autocompletion
 		'hrsh7th/nvim-cmp',
@@ -11,15 +24,20 @@ return {
 						luasnip.lsp_expand(args.body)
 					end,
 				},
+				window = {
+					completion = {
+						border = border "CmpBorder",
+						winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+					},
+					documentation = {
+						border = border "CmpDocBorder",
+					},
+				},
 				mapping = cmp.mapping.preset.insert {
 					['<C-d>'] = cmp.mapping.scroll_docs(-4),
 					['<C-f>'] = cmp.mapping.scroll_docs(4),
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<C-k>'] = cmp.mapping.confirm {
-						behavior = cmp.ConfirmBehavior.Replace,
-						select = true,
-					},
-					['<CR>'] = cmp.mapping.confirm {
 						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
 					},
@@ -72,25 +90,11 @@ return {
 							end
 						}
 					},
-					{
-						name = 'fuzzy_buffer',
-						option = {
-							get_bufnrs = function()
-								local bufs = {}
-								for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-									local buftype = vim.api.nvim_buf_get_option(buf, 'buftype')
-									if buftype ~= 'nofile' and buftype ~= 'prompt' then
-										bufs[#bufs + 1] = buf
-									end
-								end
-								return bufs
-							end
-						},
-					},
 					{ name = "nvim_lua" },
 					{ name = "path" },
 					{ name = "conventionalcommits" },
 					{ name = "calc" },
+					{ name = "emoji" },
 				},
 			}
 		end,
