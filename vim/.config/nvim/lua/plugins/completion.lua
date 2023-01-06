@@ -99,6 +99,6 @@ return {
 			}
 		end,
 		dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'tzachar/cmp-fuzzy-buffer',
-			'tzachar/fuzzy.nvim' },
+			'tzachar/fuzzy.nvim', 'rafamadriz/friendly-snippets'},
 	},
 }
