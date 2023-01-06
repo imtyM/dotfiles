@@ -56,8 +56,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<C-e>', '<cmd> NvimTreeFindFileToggle <CR>', { desc = 'Toggle file explorer' })
 
 -- Zen mode
-vim.keymap.set('n', '<C-X>', '<cmd>TZAtaraxis<CR>', { desc = '[Z]en [M]ode' })
-vim.keymap.set('n', '<C-x>', '<cmd>TZMinimalist<CR>', { desc = '[Z]en Minima[l]ist' })
+vim.keymap.set('n', 'gy', '<cmd>ZenMode<CR>', { desc = '[G]o[Y]o' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

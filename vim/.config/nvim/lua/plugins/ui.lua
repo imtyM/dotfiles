@@ -57,5 +57,24 @@ return {
 				show_trailing_blankline_indent = false,
 			}
 		end
+	},
+	{
+		'folke/zen-mode.nvim',
+		config = function ()
+			require('zen-mode').setup({
+				on_open = function ()
+					if vim.fn.has("nvim-0.8") == 1 then
+						vim.opt.cmdheight = 1
+					end
+					os.execute('tmux set -g status off')
+				end,
+				on_close = function ()
+					if vim.fn.has("nvim-0.8") == 1 then
+						vim.opt.cmdheight = 0
+					end
+					os.execute('tmux set -g status on')
+				end
+			})
+		end
 	}
 }
