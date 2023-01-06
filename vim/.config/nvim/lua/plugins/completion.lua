@@ -98,7 +98,17 @@ return {
 				},
 			}
 		end,
-		dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'tzachar/cmp-fuzzy-buffer',
-			'tzachar/fuzzy.nvim', 'rafamadriz/friendly-snippets'},
+		dependencies = {
+			'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'tzachar/cmp-fuzzy-buffer',
+			'tzachar/fuzzy.nvim',
+			{
+				'rafamadriz/friendly-snippets',
+				config = function ()
+					require("luasnip.loaders.from_vscode").lazy_load()
+					require('luasnip').filetype_extend("ruby", {"rails"})
+					end
+
+			}
+		},
 	},
 }
