@@ -62,6 +62,9 @@ return {
 		'folke/zen-mode.nvim',
 		config = function ()
 			require('zen-mode').setup({
+				window = {
+					width = 0.8
+				},
 				on_open = function ()
 					if vim.fn.has("nvim-0.8") == 1 then
 						vim.opt.cmdheight = 1

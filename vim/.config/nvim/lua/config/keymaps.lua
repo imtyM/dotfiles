@@ -66,8 +66,13 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 --Easymotion
 vim.cmd [[
+
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+nmap s <Plug>(easymotion-overwin-f)
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 ]]
 
 -- Git
@@ -100,7 +105,7 @@ keymap("n", "<leader>gq", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = t
 keymap("n", "<leader>gq", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true, desc = 'Show cursor diagnostics' })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true, desc = 'Lsp [O]utline' })
+keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true, desc = 'Lsp [O]utline' })
 
 nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')

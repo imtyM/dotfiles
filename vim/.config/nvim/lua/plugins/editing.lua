@@ -1,7 +1,14 @@
 return {
 	'tpope/vim-surround',
 	'csexton/trailertrash.vim',
-	'easymotion/vim-easymotion',
+	{
+		'easymotion/vim-easymotion',
+		config = function ()
+			vim.cmd [[
+				let g:EasyMotion_verbose = 0
+			]]
+		end
+	},
 	'christoomey/vim-tmux-navigator',
 	'tpope/vim-endwise',
 	{
