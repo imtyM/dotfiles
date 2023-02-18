@@ -27,7 +27,7 @@ return {
 
 			-- Enable the following language servers
 			-- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-			local servers = { 'tsserver', 'sumneko_lua' }
+			local servers = { 'tsserver', 'lua_ls' }
 
 			-- Ensure the servers above are installed
 			require('mason-lspconfig').setup {
@@ -55,7 +55,7 @@ return {
 			table.insert(runtime_path, 'lua/?.lua')
 			table.insert(runtime_path, 'lua/?/init.lua')
 
-			require('lspconfig').sumneko_lua.setup {
+			require('lspconfig').lua_ls.setup {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
@@ -88,8 +88,14 @@ return {
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",
+		dependencies = {
+			'EdenEast/nightfox.nvim'
+		},
 		config = function()
 			require("lspsaga").setup({})
+			vim.cmd [[ 
+				colorscheme nordfox
+			]]
 		end,
 	},
 	{

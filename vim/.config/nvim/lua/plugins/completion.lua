@@ -79,35 +79,34 @@ return {
 					end, { 'i', 's' }),
 				},
 				sources = {
-					{ name = 'nvim_lsp' },
-					{ name = 'luasnip' },
 					{
 						name = 'buffer',
 						option = {
-							keyword_length = 2,
 							get_bufnrs = function()
 								return vim.api.nvim_list_bufs()
 							end
 						}
 					},
-					{ name = "nvim_lua" },
+					{ name = 'nvim_lsp' },
+					{ name = 'luasnip' },
 					{ name = "path" },
-					{ name = "conventionalcommits" },
-					{ name = "calc" },
-					{ name = "emoji" },
 				},
 			}
+			cmp.setup.filetype('gitcommit', {
+				sources = cmp.config.sources({
+					{ name = 'conventionalcommits' }
+				})
+			})
 		end,
 		dependencies = {
 			'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'tzachar/cmp-fuzzy-buffer',
-			'tzachar/fuzzy.nvim',
+			'tzachar/fuzzy.nvim', 'neovim/nvim-lspconfig', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path',
 			{
 				'rafamadriz/friendly-snippets',
 				config = function ()
 					require("luasnip.loaders.from_vscode").lazy_load()
 					require('luasnip').filetype_extend("ruby", {"rails"})
 					end
-
 			}
 		},
 	},

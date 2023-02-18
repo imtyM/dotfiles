@@ -79,5 +79,15 @@ return {
 				end
 			})
 		end
+	},
+	{ 'folke/todo-comments.nvim',
+		config = function ()
+			require('todo-comments').setup({
+				highlight = {
+					pattern = [[.*<(KEYWORDS)\s*]],
+				},
+				pattern = [[\b(KEYWORDS)\b]]
+			})
+		end
 	}
 }
