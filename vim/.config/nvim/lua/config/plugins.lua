@@ -29,7 +29,6 @@ M.init = function ()
     },
     defaults = { lazy = false },
     install = { colorscheme = { "nordfox" } },
-    checker = { enabled = true },
     diff = {
       cmd = "terminal_git",
     },
