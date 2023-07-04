@@ -27,7 +27,7 @@ return {
 
 			-- Enable the following language servers
 			-- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-			local servers = { 'tsserver', 'lua_ls', 'prismals', 'tailwindcss' }
+			local servers = { 'tsserver', 'lua_ls', 'prismals', 'tailwindcss', 'rust_analyzer' }
 
 			-- Ensure the servers above are installed
 			require('mason-lspconfig').setup {
