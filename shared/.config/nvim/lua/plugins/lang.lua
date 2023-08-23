@@ -1,6 +1,18 @@
 return {
-	'tpope/vim-rails',
-	'vim-ruby/vim-ruby',
-	'chrisbra/csv.vim',
-	"slim-template/vim-slim",
+  {
+    'tpope/vim-rails',
+    ft = { 'ruby', 'slim' },
+  },
+  {
+    'vim-ruby/vim-ruby',
+    ft = { 'ruby', 'slim' },
+  },
+  {
+    'chrisbra/csv.vim',
+    ft = { 'csv' },
+  },
+  {
+    'slim-template/vim-slim',
+    ft = { 'slim' },
+  },
 }

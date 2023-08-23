@@ -16,7 +16,7 @@ vim.g.maplocalleader = ' '
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
-vim.keymap.set({'n', 'v', 'i'}, '<C-j>', '<ESC>', { desc = 'Another escape' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-j>', '<ESC>', { desc = 'Another escape' })
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
@@ -27,11 +27,11 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
 vim.keymap.set('n', '<C-o>', '<cmd>tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', '<C-i>', '<cmd>tabprevious<CR>', { desc = 'Previous tab' })
 
-vim.keymap.set('n', '<C-w>', '<cmd>wa<CR>', { desc = 'Previous tab' })
-vim.keymap.set('i', '<C-w>', '<ESC><cmd>wa<CR>', { desc = 'Previous tab' })
+vim.keymap.set('n', '<C-w>', '<cmd>wa<CR>', { desc = 'Save all' })
+vim.keymap.set('i', '<C-w>', '<ESC><cmd>wa<CR>', { desc = 'Save all' })
 
-vim.keymap.set('n', '<C-q>', '<cmd>q<CR>', { desc = 'Previous tab' })
-vim.keymap.set('i', '<C-q>', '<ESC><cmd>q<CR>', { desc = 'Previous tab' })
+vim.keymap.set('n', '<C-q>', '<cmd>q<CR>', { desc = 'quit buffer' })
+vim.keymap.set('i', '<C-q>', '<ESC><cmd>q<CR>', { desc = 'quit buffer' })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -66,13 +66,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 --Easymotion
 vim.cmd [[
-
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-nmap s <Plug>(easymotion-overwin-f)
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
 ]]
 
 -- Git
@@ -81,31 +76,31 @@ nmap('<leader>gg', ':tabnew <CR>:G<CR>:winc k<CR>:q<CR>:NvimTreeClose<CR>', '[G]
 
 ------------------------ LSP keymaps -------------------------
 -- Finder
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
 
 -- Code action
 -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true, desc = '[C]ode [A]ction' })
+keymap({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { silent = true, desc = '[C]ode [A]ction' })
 
 -- rename
 -- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true, desc = '[R]e[n]ame'})
+keymap('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', { silent = true, desc = '[R]e[n]ame' })
 
 -- nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
 -- Peek Definition
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true, desc = '[P]eek definition' })
+keymap('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', { silent = true, desc = '[P]eek definition' })
 
 -- Show line diagnostics
-keymap("n", "<leader>gq", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true, desc  = 'Show line diagnostics' })
+keymap('n', '<leader>gq', '<cmd>Lspsaga show_line_diagnostics<CR>', { silent = true, desc = 'Show line diagnostics' })
 
 -- Show cursor diagnostics
-keymap("n", "<leader>gq", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true, desc = 'Show cursor diagnostics' })
+keymap('n', '<leader>gq', '<cmd>Lspsaga show_cursor_diagnostics<CR>', { silent = true, desc = 'Show cursor diagnostics' })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true, desc = 'Lsp [O]utline' })
+keymap('n', '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true, desc = 'Lsp [O]utline' })
 
 nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
@@ -116,7 +111,7 @@ nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '
 -- See `:help K` for why this keymap
 -- nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true, desc = 'Hover doc' })
+keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { silent = true, desc = 'Hover doc' })
 
 -- Lesser used LSP functionality
 nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -128,23 +123,12 @@ end, '[W]orkspace [L]ist Folders')
 
 -- Trouble
 -- Lua
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
-  {silent = true, noremap = true, desc = 'Trouble diagnostics'}
-)
-vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
-  {silent = true, noremap = true, desc = 'Trouble diagnostics workspace'}
-)
-vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
-  {silent = true, noremap = true, desc = 'Trouble diagnostics document'}
-)
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
-  {silent = true, noremap = true, desc = 'Trouble diagnostics loclist'}
-)
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-  {silent = true, noremap = true, desc = 'Trouble diagnostics quickfix'}
-)
-vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
-  {silent = true, noremap = true, desc = 'Trouble diagnostics lsp_references'}
-)
+vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true, noremap = true, desc = 'Trouble diagnostics' })
+vim.keymap.set('n', '<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { silent = true, noremap = true, desc = 'Trouble diagnostics workspace' })
+vim.keymap.set('n', '<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>', { silent = true, noremap = true, desc = 'Trouble diagnostics document' })
+vim.keymap.set('n', '<leader>xl', '<cmd>TroubleToggle loclist<cr>', { silent = true, noremap = true, desc = 'Trouble diagnostics loclist' })
+vim.keymap.set('n', '<leader>xq', '<cmd>TroubleToggle quickfix<cr>', { silent = true, noremap = true, desc = 'Trouble diagnostics quickfix' })
+vim.keymap.set('n', 'gR', '<cmd>TroubleToggle lsp_references<cr>', { silent = true, noremap = true, desc = 'Trouble diagnostics lsp_references' })
 
------------------------- LSP keymaps -------------------------
+------------------------ Neorg -------------------------
+nmap('<leader>nm', ':Neorg workspace main<CR>', '[N]eorg [M]ain')
