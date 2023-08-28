@@ -45,6 +45,8 @@
     # build tools
     gcc
   ];
+  programs.rtx.enable = true;
+  programs.rtx.enableZshIntegration = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
