@@ -31,7 +31,7 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main nixos configuration file <
