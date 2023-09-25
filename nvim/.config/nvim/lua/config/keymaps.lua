@@ -56,7 +56,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<C-e>', '<cmd> NvimTreeFindFileToggle <CR>', { desc = 'Toggle file explorer' })
 
 -- Zen mode
-vim.keymap.set('n', 'gy', '<cmd>ZenMode<CR>', { desc = '[G]o[Y]o' })
+vim.keymap.set('n', '<leader>gy', '<cmd>ZenMode<CR>', { desc = '[G]o[Y]o' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
