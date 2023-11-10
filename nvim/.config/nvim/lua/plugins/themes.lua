@@ -16,5 +16,6 @@ return {
     --     colorscheme catppuccin-frappe
     --   ]]
     -- end,
-  }
+  },
+  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 }
 }

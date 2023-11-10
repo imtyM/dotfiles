@@ -2,7 +2,7 @@ alias cl='clear'
 alias q='exit'
 alias r='ranger'
 alias mux='tmuxinator'
-alias v='nvim .'
+alias v='NVIM_APPNAME=lazy nvim'
 alias asp='$HOME/pixel_art/aseprite/build/bin/aseprite'
 
 alias sz='source ~/.zshrc'

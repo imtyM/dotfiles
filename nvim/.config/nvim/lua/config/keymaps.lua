@@ -48,6 +48,7 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer]' })
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+keymap('n', '<leader>r', require('telescope.builtin').resume, { silent = true, desc = '[R]esume' })
 vim.keymap.set('n', '<leader>so', require('telescope.builtin').oldfiles, { desc = '[S]earch [O]ld Files' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
@@ -82,9 +83,6 @@ keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
 -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 keymap({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { silent = true, desc = '[C]ode [A]ction' })
 
--- rename
--- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-keymap('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', { silent = true, desc = '[R]e[n]ame' })
 
 -- nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
 -- Peek Definition
