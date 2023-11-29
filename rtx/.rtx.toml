@@ -2,7 +2,7 @@
 ruby = '3.2.2'
 nodejs = 'lts'
 python = '3.10.5'
-neovim = '0.9.1'
+neovim = 'latest'
 fzf = '0.30.0'
 postgres = '12.5'
 zoxide = '0.8.2'

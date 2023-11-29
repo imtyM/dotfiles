@@ -1,3 +1,18 @@
+local logo = [[
+           █ █ █╗                                        
+           ╚█╔█╔╝                                        
+      █████╗╚╝╚╝ ██╗ ██╗               █ █ █╗            
+     ██╔═██║ ██╗ ██║ ██║               ╚█╔█╔╝            
+      █████║ ██║ ██║ ██║  ██████╗   ██╗ ╚╝╚╝██╗ ██    ██╗
+      ╚══██║ ██║ ██║ ██║ ██╔═══██╗  ██║ ██╗ ██║ ██    ██║
+         ██████████║ ██║ ████████████████████╔╝ ╚██████╔╝
+         ╚═════════╝ ╚═╝ ██╔═════════════════╝   ╚═════╝ 
+                         ██║                       ██╗   
+                         ╚═╝                       ╚═╝   
+]]
+
+logo = string.rep("\n", 8) .. logo .. "\n\n"
+
 return {
   {
     "akinsho/bufferline.nvim",
@@ -22,5 +37,15 @@ return {
     config = function()
       require("focus").setup()
     end,
+  },
+
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    opts = {
+      config = {
+        header = vim.split(logo, "\n"),
+      },
+    },
   },
 }
