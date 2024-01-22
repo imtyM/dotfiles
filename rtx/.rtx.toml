@@ -8,6 +8,8 @@ postgres = '12.5'
 zoxide = '0.8.2'
 pnpm = '8.5.0'
 lazydocker = 'latest'
+tmux = 'latest'
+zellij = 'latest'
 
 [plugins]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
