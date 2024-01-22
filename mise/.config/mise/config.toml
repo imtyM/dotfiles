@@ -10,6 +10,7 @@ pnpm = '8.5.0'
 lazydocker = 'latest'
 tmux = 'latest'
 zellij = 'latest'
+go = 'latest'
 
 [plugins]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
