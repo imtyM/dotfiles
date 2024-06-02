@@ -1,10 +1,10 @@
 [tools]
 ruby = '3.2.2'
 nodejs = 'lts'
-python = '3.10.5'
+python = "3.11.6"
 neovim = 'latest'
 fzf = '0.30.0'
-postgres = '12.5'
+postgres = '15'
 zoxide = '0.8.2'
 pnpm = '8.5.0'
 lazydocker = 'latest'
@@ -14,3 +14,6 @@ go = 'latest'
 
 [plugins]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
+
+[settings]
+experimental = true
