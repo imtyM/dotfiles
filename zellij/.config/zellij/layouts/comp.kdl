@@ -1,0 +1,4 @@
+layout cwd="~/Code/comparify-web/" {
+  tab name="hello" {
+  }
+}

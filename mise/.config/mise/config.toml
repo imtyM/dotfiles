@@ -8,6 +8,8 @@ postgres = "15"
 zoxide = '0.8.2'
 pnpm = '8.5.0'
 lazydocker = 'latest'
+tmux = 'latest'
+zellij = 'latest'
 go = 'latest'
 
 [plugins]
