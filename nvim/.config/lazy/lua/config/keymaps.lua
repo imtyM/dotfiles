@@ -26,3 +26,8 @@ vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files, { desc = "
 -- Gd into different windows and tabs
 vim.keymap.set("n", "gt", "<cmd>tab split<CR> gd", { desc = "Go to def in new tab" })
 vim.keymap.set("n", "gv", "<cmd>vs<CR> gd", { desc = "Go to def in a new split" })
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

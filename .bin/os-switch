@@ -1,4 +1,0 @@
-#!/bin/sh
-pushd ~/.dot
-sudo nixos-rebuild switch --flake .#
-popd

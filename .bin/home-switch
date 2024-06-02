@@ -1,4 +1,0 @@
-#!/bin/sh
-pushd ~/.dot
-home-manager switch --flake .#imtiaz@nixos
-popd

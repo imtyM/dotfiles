@@ -19,13 +19,27 @@ local function set_win()
   }
 end
 
+local function nvim_tree_remaps(bufnr)
+  local api = require("nvim-tree.api")
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- default mappings
+  api.config.mappings.default_on_attach(bufnr)
+
+  -- custom mappings
+  vim.keymap.set("n", "<C-e>", api.tree.close, opts("Close"))
+end
+
 return {
   {
     "nvim-tree/nvim-tree.lua",
     enabled = true,
     config = function()
       require("nvim-tree").setup({
-        remove_keymaps = { "<C-e>", "s" },
+        on_attach = nvim_tree_remaps,
         view = {
           float = {
             enable = true,
@@ -40,10 +54,6 @@ return {
         },
       })
     end,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons", -- optional, for file icons
-    },
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
   },
   {
     "ThePrimeagen/harpoon",

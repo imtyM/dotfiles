@@ -17,3 +17,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# starship
+eval "$(starship init zsh)"
