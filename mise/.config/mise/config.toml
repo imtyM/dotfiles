@@ -1,12 +1,11 @@
 [tools]
-ruby = '3.2.2'
+ruby = 'latest'
 nodejs = 'lts'
-python = "3.11.6"
+python = "latest"
 neovim = 'latest'
-fzf = '0.30.0'
 postgres = '15'
-zoxide = '0.8.2'
-pnpm = '8.5.0'
+zoxide = 'latest'
+pnpm = 'latest'
 lazydocker = 'latest'
 tmux = 'latest'
 zellij = 'latest'
