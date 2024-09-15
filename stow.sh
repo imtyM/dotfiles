@@ -33,14 +33,14 @@ check_and_install_stow() {
 
 # Function to install stow on Debian/Ubuntu
 install_stow_linux() {
-	if which dpkg &>/dev/null; then
-		echo "Installing stow using apt (assuming Debian-based distro)"
+	if grep -q 'ID=ubuntu' /etc/os-release; then
+		echo "Installing stow using apt (assuming Ubuntu)"
 		sudo apt install stow
-	elif which pacman &>/dev/null; then
-		echo "Installing stow using pacman (assuming Arch-based distro)"
+	elif grep -q 'ID=arch' /etc/os-release; then
+		echo "Installing stow using pacman (assuming Arch)"
 		sudo pacman -S stow
 	else
-		echo "** This script is not currently configured for your package manager."
+		echo "** This script is not currently configured for your distribution."
 		echo "** Please consult your distribution's documentation for instructions on installing stow."
 	fi
 }

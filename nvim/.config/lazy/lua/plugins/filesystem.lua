@@ -60,6 +60,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    enabled = false,
     lazy = true,
     opts = {
       mark_branch = true,

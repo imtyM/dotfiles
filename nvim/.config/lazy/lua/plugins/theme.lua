@@ -1,15 +1,12 @@
 return {
   {
-    'EdenEast/nightfox.nvim',
-    lazy = false,
-    priority = 1000,
+    "EdenEast/nightfox.nvim",
+    event = "User LazyColorscheme",
   },
-  -- {
-  --   "catppuccin/nvim", name = "catppuccin", priority = 1000 ,
-  --   -- config = function()
-  --   --   vim.cmd [[
-  --   --     colorscheme catppuccin-frappe
-  --   --   ]]
-  --   -- end,
-  -- }
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    event = "User LazyColorscheme",
+  },
+  { "ellisonleao/gruvbox.nvim", event = "User LazyColorscheme" },
 }
