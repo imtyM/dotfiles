@@ -8,7 +8,7 @@ export FLYCTL_INSTALL="/home/imtiaz/.fly"
 
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-export PATH="$PATH:$HOME/bin:$FLYCTL_INSTALL/bin"
+export PATH="$PATH:$HOME/bin:$FLYCTL_INSTALL/bin:$APPS_HOME/platform-tools"
 
 TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'avg shared (code):         %X KB'$'\n'\
