@@ -14,8 +14,8 @@ vim.keymap.set("n", "<C-q>", "<cmd>q<CR>", { desc = "quit buffer" })
 vim.keymap.set("i", "<C-q>", "<cmd>q<CR>", { desc = "quit buffer" })
 
 -- Move tabs
-vim.keymap.set("n", "<C-o>", "<cmd>tabnext<CR>", { desc = "Next tab" })
-vim.keymap.set("n", "<C-i>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
+-- vim.keymap.set("n", "<C-o>", "<cmd>tabnext<CR>", { desc = "Next tab" })
+-- vim.keymap.set("n", "<C-i>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
 
 -- file explorer
 vim.keymap.set("n", "<C-e>", "<cmd> NvimTreeFindFileToggle <CR>", { desc = "Toggle file explorer" })
@@ -26,6 +26,3 @@ vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files, { desc = "
 -- Gd into different windows and tabs
 vim.keymap.set("n", "gt", "<cmd>tab split<CR> gd", { desc = "Go to def in new tab" })
 vim.keymap.set("n", "gv", "<cmd>vs<CR> gd", { desc = "Go to def in a new split" })
-
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

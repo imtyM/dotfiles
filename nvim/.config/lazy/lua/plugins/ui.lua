@@ -41,14 +41,14 @@ return {
       require("focus").setup()
     end,
   },
-
   {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
+    "folke/snacks.nvim",
     opts = {
-      config = {
-        header = vim.split(logo, "\n"),
-      },
-    },
-  },
+      dashboard = {
+        preset = {
+          header = logo
+        }
+      }
+    }
+  }
 }
