@@ -110,22 +110,22 @@ cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d
 
 ## YABAI
 # Restart yabai
-ctrl + cmd - r : yabai --restart-service
+# ctrl + cmd - r : yabai --restart-service
 
 # focus window
-ctrl + cmd - h : yabai -m window --focus west
-ctrl + cmd - j : yabai -m window --focus south
-ctrl + cmd - k : yabai -m window --focus north
-ctrl + cmd - l : yabai -m window --focus east
+# ctrl + cmd - h : yabai -m window --focus west
+# ctrl + cmd - j : yabai -m window --focus south
+# ctrl + cmd - k : yabai -m window --focus north
+# ctrl + cmd - l : yabai -m window --focus east
 
 # swap managed window
 # shift + alt - h : yabai -m window --swap north
 
 # move managed window
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
+# shift + cmd - h : yabai -m window --warp west
+# shift + cmd - j : yabai -m window --warp south
+# shift + cmd - k : yabai -m window --warp north
+# shift + cmd - l : yabai -m window --warp east
 
 # balance size of windows
 # shift + alt - 0 : yabai -m space --balance
@@ -137,23 +137,23 @@ shift + cmd - l : yabai -m window --warp east
 # shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-ctrl + cmd + shift - p : yabai -m space --create && \
-                  index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
-                  yabai -m window --space "${index}" && \
-                  yabai -m space --focus "${index}"
-
-ctrl + cmd - d : yabai -m space --destroy
-ctrl + cmd - c : yabai -m space --destroy
+# ctrl + cmd + shift - p : yabai -m space --create && \
+#                   index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
+#                   yabai -m window --space "${index}" && \
+#                   yabai -m space --focus "${index}"
+#
+# ctrl + cmd - d : yabai -m space --destroy
+# ctrl + cmd - c : yabai -m space --destroy
 
 # fast focus desktop
 # cmd + alt - x : yabai -m space --focus recent
 # cmd + alt - 1 : yabai -m space --focus 1
-ctrl + cmd - i : yabai -m space --focus prev
-ctrl + cmd - o : yabai -m space --focus next
+# ctrl + cmd - i : yabai -m space --focus prev
+# ctrl + cmd - o : yabai -m space --focus next
 
 # send window to desktop and follow focus
-ctrl + cmd - n : yabai -m window --space next; yabai -m space --focus next
-ctrl + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
+# ctrl + cmd - n : yabai -m window --space next; yabai -m space --focus next
+# ctrl + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
 # shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 
 # focus monitor
@@ -180,8 +180,8 @@ ctrl + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
 # ctrl + alt - h : yabai -m window --insert west
 
 # toggle window zoom
-alt - d : yabai -m window --toggle zoom-parent
-alt - f : yabai -m window --toggle zoom-fullscreen
+# alt - d : yabai -m window --toggle zoom-parent
+# alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
 # alt - e : yabai -m window --toggle split
@@ -190,4 +190,4 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 # alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle sticky(+float), picture-in-picture
-alt - p : yabai -m window --toggle sticky --toggle pip
+# alt - p : yabai -m window --toggle sticky --toggle pip
