@@ -1,6 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    enabled = false,
     opts = function(_, opts)
       local cmp = require("cmp")
 
@@ -26,4 +27,13 @@ return {
       }))
     end,
   },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = 'default',
+        ['<C-k>'] = { "select_and_accept" }
+      }
+    }
+  }
 }

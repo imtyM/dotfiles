@@ -26,3 +26,5 @@ eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 
 # export BROWSER="wslview"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

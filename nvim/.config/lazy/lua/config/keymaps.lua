@@ -21,7 +21,7 @@ vim.keymap.set("i", "<C-q>", "<cmd>q<CR>", { desc = "quit buffer" })
 vim.keymap.set("n", "<C-e>", "<cmd> NvimTreeFindFileToggle <CR>", { desc = "Toggle file explorer" })
 
 -- telescope
-vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
+-- vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
 
 -- Gd into different windows and tabs
 vim.keymap.set("n", "gt", "<cmd>tab split<CR> gd", { desc = "Go to def in new tab" })
