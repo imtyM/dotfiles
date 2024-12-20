@@ -3,4 +3,4 @@
 -- Add any additional options here
 --
 -- Disable animations
--- vim.g.snacks_animate = false
+vim.g.snacks_animate = false
