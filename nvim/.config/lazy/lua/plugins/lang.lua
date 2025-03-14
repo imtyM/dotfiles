@@ -2,6 +2,9 @@ return {
   {
     "tpope/vim-rails",
     ft = { "ruby", "slim" },
+    config = function()
+      vim.api.nvim_create_user_command('AC', "execute '!touch ' . eval('rails#buffer().alternate()')", {})
+    end,
   },
   {
     "nvim-neotest/neotest",
