@@ -3,13 +3,14 @@ ruby = 'latest'
 nodejs = 'lts'
 python = "latest"
 neovim = 'latest'
-postgres = '15'
+postgres = "latest"
 zoxide = 'latest'
 pnpm = 'latest'
 lazydocker = 'latest'
 go = 'latest'
+tmux = "latest"
 
-[plugins]
+[alias]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
 
 [settings]
