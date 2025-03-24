@@ -9,6 +9,7 @@ pnpm = 'latest'
 lazydocker = 'latest'
 go = 'latest'
 tmux = "latest"
+github-cli = "latest"
 
 [alias]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
