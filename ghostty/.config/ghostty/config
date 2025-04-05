@@ -1,0 +1,7 @@
+theme = nordfox
+
+font-size = 19
+font-family = GeistMono Nerd Font Mono
+
+macos-titlebar-style = hidden
+window-decoration = false

@@ -114,27 +114,54 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-0 = 'workspace 0'
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
+ctrl-alt-6 = 'workspace 6-alt'
+
 alt-7 = 'workspace 7'
+ctrl-alt-7 = 'workspace 7-alt'
+
 alt-8 = 'workspace 8'
+ctrl-alt-8 = 'workspace 8-alt'
+
 alt-9 = 'workspace 9'
+ctrl-alt-9 = 'workspace 9-alt'
+
+alt-y = 'workspace terminal'          # Terminal
+ctrl-alt-y = 'workspace terminal-alt'
+
+alt-u = 'workspace browsers'          # Browsers
+ctrl-alt-u = 'workspace browsers-alt'
+
+alt-i = 'workspace I'
+ctrl-alt-i = 'workspace I-alt'
+
+alt-o = 'workspace O'
+ctrl-alt-o = 'workspace O-alt'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
 alt-shift-6 = 'move-node-to-workspace 6'
+ctrl-alt-shift-6 = 'move-node-to-workspace 6-alt'
+
 alt-shift-7 = 'move-node-to-workspace 7'
+ctrl-alt-shift-7 = 'move-node-to-workspace 7-alt'
+
 alt-shift-8 = 'move-node-to-workspace 8'
+ctrl-alt-shift-8 = 'move-node-to-workspace 8-alt'
+
 alt-shift-9 = 'move-node-to-workspace 9'
+ctrl-alt-shift-9 = 'move-node-to-workspace 9-alt'
+
+alt-shift-y = 'move-node-to-workspace terminal'
+ctrl-alt-shift-y = 'move-node-to-workspace terminal-alt'
+
+alt-shift-u = 'move-node-to-workspace browsers'
+ctrl-alt-shift-u = 'move-node-to-workspace browsers-alt'
+
+alt-shift-i = 'move-node-to-workspace I'
+ctrl-alt-shift-i = 'move-node-to-workspace I-alt'
+
+alt-shift-o = 'move-node-to-workspace O'
+ctrl-alt-shift-o = 'move-node-to-workspace O-alt'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -142,7 +169,7 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+alt-esc = 'mode service'
 
 alt-shift-f = 'fullscreen'
 alt-f = 'macos-native-fullscreen'
@@ -169,6 +196,18 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#resize
+m = 'resize smart -50'
+u = 'resize smart +50'
+
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace terminal'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace browsers'

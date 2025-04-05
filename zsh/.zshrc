@@ -28,3 +28,4 @@ eval "$(atuin init zsh)"
 # export BROWSER="wslview"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:$HOME/.maestro/bin
