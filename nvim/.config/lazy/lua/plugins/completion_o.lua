@@ -35,5 +35,12 @@ return {
         ['<C-k>'] = { "select_and_accept" }
       }
     }
-  }
+  },
+    {
+    "zbirenbaum/copilot.lua",
+    optional = true,
+    opts = function()
+      require("copilot.api").status = require("copilot.status")
+    end,
+  },
 }

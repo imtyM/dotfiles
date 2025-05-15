@@ -1,5 +1,5 @@
 [tools]
-ruby = 'latest'
+ruby = "3.2.3"
 nodejs = 'lts'
 python = "latest"
 neovim = 'latest'
@@ -18,6 +18,9 @@ fd = "latest"
 lazygit = "latest"
 flyctl = "latest"
 yazi = "latest"
+bun = "latest"
+kotlin = "latest"
+gradle = "latest"
 
 [alias]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
