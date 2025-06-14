@@ -48,5 +48,5 @@ windows:
   - cmd:
   - editor: v
   - servers: pg_ctl start;clear
-  - calc_oven: cd ../calc-oven;bin/run
-  - co_editor: cd ../calc-oven;v
+  - calc_oven: cd ../calc-oven;bin/dev-server
+  - co_editor: cd ../calc-oven

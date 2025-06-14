@@ -38,7 +38,11 @@ return {
     event = "BufRead",
     version = false,
     config = function()
-      require("focus").setup()
+      require("focus").setup({
+        autoresize = {
+          width = 100
+        }
+      })
     end,
   },
   {
