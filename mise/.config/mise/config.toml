@@ -1,8 +1,8 @@
 [tools]
-ruby = "latest"
+ruby = "3.4.4"
 nodejs = 'lts'
-python = "latest"
-neovim = 'latest'
+python = "3.11"
+neovim = "latest"
 postgres = "latest"
 zoxide = 'latest'
 pnpm = 'latest'
