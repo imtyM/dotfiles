@@ -1,3 +1,5 @@
+local toggle_key = ","  -- Alt/Meta + comma
+
 return {
   {
     "samir-roy/code-bridge.nvim",
@@ -34,6 +36,19 @@ return {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     config = true,
+    opts = {
+      terminal = {
+        snacks_win_opts = {
+          position = "float",
+          width = 0.8,
+          height = 0.8,
+          border = "rounded",
+          keys = {
+            claude_hide = { toggle_key, function(self) self:hide() end, mode = "t", desc = "Hide" },
+          },
+        },
+      },
+    },
     keys = {
       { "<leader>a", nil, desc = "AI/Claude Code" },
       { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
@@ -52,6 +67,7 @@ return {
       -- Diff management
       { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
       { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+      { toggle_key, "<cmd>ClaudeCodeFocus<cr>", desc = "Claude Code", mode = { "n", "x" } }
     },
   }
 }

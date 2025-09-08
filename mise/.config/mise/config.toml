@@ -19,6 +19,7 @@ lazygit = "latest"
 flyctl = "latest"
 yazi = "latest"
 bun = "latest"
+uv = "latest"
 
 [alias]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
