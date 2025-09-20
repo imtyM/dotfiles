@@ -1,4 +1,4 @@
-local toggle_key = ","  -- Alt/Meta + comma
+local toggle_key = "<C-,>"  -- Alt/Meta + comma
 
 return {
   {

@@ -16,7 +16,7 @@ return {
     end,
   },
   {
-    "echasnovski/mini.bufremove",
+    "nvim-mini/mini.bufremove",
     keys = {
       {
         "<c-q>",

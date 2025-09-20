@@ -12,7 +12,7 @@ tmux = "latest"
 github-cli = "latest"
 starship = "latest"
 fzf = "latest"
-node = "latest"
+node = "20.11.0"
 ripgrep = "latest"
 fd = "latest"
 lazygit = "latest"
@@ -20,6 +20,8 @@ flyctl = "latest"
 yazi = "latest"
 bun = "latest"
 uv = "latest"
+caddy = "latest"
+flutter = "latest"
 
 [alias]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
