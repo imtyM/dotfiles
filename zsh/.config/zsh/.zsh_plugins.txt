@@ -1,0 +1,6 @@
+getantidote/use-omz
+
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/git
+djui/alias-tips
+TyWR/Nord-zsh
