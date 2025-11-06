@@ -1,9 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
-  opts = function (_, opts)
-    local keys = require("lazyvim.plugins.lsp.keymaps").get()
-
-    keys[#keys + 1] = {"<C-k>", false, mode = "i"}
-    opts.inlay_hints.enabled = false
-  end,
+  opts = {
+    inlay_hints = {
+      enabled = false,
+    }
+  },
+  keys = {
+    {"<C-k>", false, mode = "i"}
+  }
 }

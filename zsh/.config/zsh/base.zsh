@@ -36,3 +36,5 @@ export PATH=$PATH:$HOME/.maestro/bin
 
 # opencode
 export PATH=/Users/imtiazmukadam/.opencode/bin:$PATH
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
