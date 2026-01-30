@@ -15,6 +15,7 @@ alias be='bundle exec'
 alias rs='bundle exec rails s'
 alias rt='bundle exec rails t'
 alias rc='bundle exec rails c'
+alias myip='curl -s https://ipinfo.io/ip | pbcopy && echo "Copied public IP to clipboard: $(pbpaste)"'
 
 # useful commands
 alias check_space='sudo ncdu -x / --exclude /System/Volumes/Data --exclude /Volumes'

@@ -1,7 +1,7 @@
 # /home/imtiaz/.config/tmuxinator/bob.yml
 
 name: bob
-root: ~/Code/bob
+root: ~/Code/platform/packages/bob
 
 # Optional tmux socket
 # socket_name: foo

@@ -8,7 +8,6 @@ zoxide = 'latest'
 pnpm = 'latest'
 lazydocker = 'latest'
 go = 'latest'
-tmux = "latest"
 github-cli = "latest"
 starship = "latest"
 fzf = "latest"
@@ -22,6 +21,10 @@ bun = "latest"
 uv = "latest"
 caddy = "latest"
 flutter = "latest"
+tmux = "latest"
+pipx = "latest"
+just = "latest"
+redis = "latest"
 
 [alias]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
