@@ -1,6 +1,7 @@
 ---
 name: code-alignment
 description: Assess uncommitted code changes for alignment with existing codebase patterns, architecture, and conventions. Use before committing to catch foreign patterns, missed reuse opportunities, and style inconsistencies. Triggers on phrases like "check my changes", "review uncommitted", "assess fit", "pattern check", "code alignment", or "pre-commit review".
+allowed_tools: Read, Grep
 ---
 
 # Code Alignment
@@ -28,6 +29,7 @@ git diff --cached  # for staged changes
 ```
 
 Focus on:
+
 - New files being added
 - Modified files
 - The nature of changes (new component, utility, service, etc.)
@@ -46,6 +48,7 @@ Before assessing, build context on existing patterns by exploring:
 8. **Testing patterns**: How are tests structured?
 
 Use targeted exploration:
+
 - Look at sibling files in the same directory
 - Find similar existing implementations
 - Check for shared utilities that could be reused
@@ -55,24 +58,28 @@ Use targeted exploration:
 Evaluate the uncommitted changes against these dimensions:
 
 #### A. Code Style & Conventions
+
 - Naming conventions (files, functions, variables, classes)
 - Code formatting and structure
 - Comment style and documentation patterns
 - Import organization and grouping
 
 #### B. Architectural Patterns
+
 - File placement (is it in the right directory?)
 - Module boundaries and responsibilities
 - Dependency direction (does it respect existing layers?)
 - Service/component granularity
 
 #### C. Reuse Opportunities
+
 - Existing utilities that could replace custom code
 - Shared components that could be leveraged
 - Common patterns that should be followed
 - DRY violations (reimplementing existing functionality)
 
 #### D. Consistency
+
 - Error handling approach
 - Logging patterns
 - State management conventions
@@ -115,12 +122,14 @@ Produce a structured report with these sections:
 **Default**: Display report in chat
 
 **"Write to file"**: Write the report to a markdown file
+
 ```bash
 # Suggest path like: .claude/reports/code-alignment-YYYY-MM-DD.md
 # Or project-appropriate location
 ```
 
 **"Execute quick wins"**: Implement the trivial/small effort fixes automatically
+
 - Only execute changes marked as "trivial" or "small" effort
 - Show each change before making it
 - Skip anything that requires user judgment
@@ -128,34 +137,40 @@ Produce a structured report with these sections:
 ## Assessment criteria by category
 
 ### File & Folder Patterns
+
 - Does the file live where similar files live?
 - Does the filename follow the same convention as peers?
 - Is the folder structure consistent with the project?
 
 ### Naming Patterns
+
 - Variables: camelCase, snake_case, PascalCase - match the project
 - Functions: verb-first, descriptive, consistent with similar functions
 - Components: match existing component naming
 - Files: match adjacent file naming patterns
 
 ### Code Structure Patterns
+
 - Function length and complexity (match existing norms)
 - Class vs functional approaches (match project preference)
 - Export patterns (default vs named, barrel files)
 - Code organization within files
 
 ### Import Patterns
+
 - Grouping (stdlib, external, internal, relative)
 - Aliasing conventions
 - Barrel imports vs direct imports
 
 ### Error Handling
+
 - Try/catch patterns
 - Error types and messages
 - Logging on errors
 - User-facing error handling
 
 ### Testing Patterns
+
 - Test file location and naming
 - Test structure (describe/it, test functions)
 - Mocking approaches
