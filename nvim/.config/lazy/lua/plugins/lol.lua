@@ -35,5 +35,11 @@ return {
     config = function()
       require('ts-error-translator').setup()
     end
+  },
+  {
+      "magnuswahlstrand/codetour.nvim",
+      config = function()
+          require("codetour").setup()
+      end
   }
 }

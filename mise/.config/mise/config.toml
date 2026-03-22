@@ -25,6 +25,7 @@ tmux = "latest"
 pipx = "latest"
 just = "latest"
 redis = "latest"
+television = "latest"
 
 [tool_alias]
 lazydocker = 'https://github.com/comdotlinux/asdf-lazydocker'
